@@ -71,4 +71,43 @@ public class SortingMethods {
         return operationCounter;
     }
 
+    static int selectionSort (int [] list) {
+
+        int operationCounter = 0; // Contador de operações..
+
+        // Iterador externo.
+        /* Alcança o penultimo elemento da array pois ele será alcançado no loop interno. */
+        for (int i = 0; i < list.length - 1; i++) {
+
+            int minIndex = i;
+
+            // Iterador interno
+            /* (j = i + 1) Sempre estará um elemento à frente do índice de "i" */
+            for (int j = i + 1; j < list.length; j++){
+
+                operationCounter++;
+
+                // Compara os indices vizinhos n1 (iterador externo) e n2 (iterador interno)
+                if (list[j] < list[minIndex]) {
+                    minIndex = j; // minIndex terá o indice com menor elemento
+                }
+            }
+
+            /* Se minIndex for diferente de i, significa que o elemento atual (list[i])
+            não é o menor da parte não ordenada e precisa ser trocado com list[minIndex],
+            que contém o menor valor encontrado nesta iteração. */
+            if (minIndex != i) {
+
+                operationCounter++;
+
+                int temp = list[i]; // Armazena temporariamente o elemento na posição i
+
+                // Realiza troca
+                list[i] = list[minIndex];
+                list[minIndex] = temp;
+            }
+        }
+
+        return operationCounter;
+    }
 }
