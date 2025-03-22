@@ -2,7 +2,7 @@ package methods;
 
 public class SortingMethods {
 
-    static int bubbleSort (int[] list) {
+    static public int bubbleSort (int[] list) {
 
         int operationCounter = 0; // Contador de operações.
 
@@ -17,9 +17,9 @@ public class SortingMethods {
             ordenados. */
 
 
-            for (int j = 1; j < list.length - 1 - i; j++) { // Iterador interno.
+            for (int j = 1; j < list.length - i; j++) { // Iterador interno.
                 /* O último item da lista estará ordenado automaticamente quando todos
-                os outros já estiverem no lugar. Por isso (list.length - 1 -i). */
+                os outros já estiverem no lugar. Por isso (list.length -i). */
 
 
                 operationCounter++;
@@ -45,7 +45,7 @@ public class SortingMethods {
         return operationCounter;
     }
 
-    static int insertionSort(int[] list) {
+    static public int insertionSort(int[] list) {
         int operationCounter = 0; // Contador de operações
 
         for (int i = 1; i < list.length; i++) {
@@ -71,7 +71,7 @@ public class SortingMethods {
         return operationCounter;
     }
 
-    static int selectionSort (int [] list) {
+    static public int selectionSort (int [] list) {
 
         int operationCounter = 0; // Contador de operações..
 
